@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guess the Word Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h2>🎯 Guess the Word</h2>
+
+    <button id="startBtn" onclick="showCategories()">▶️ Start Game</button>
+
+    <div class="category-btns" id="categoryButtons">
+      <p><strong>Select Category:</strong></p>
+      <button onclick="selectCategory('fruits')">🍎 Fruits</button>
+      <button onclick="selectCategory('vegetables')">🥦 Vegetables</button>
+      <button onclick="selectCategory('animals')">🐾 Animals</button>
+      <button onclick="selectCategory('country')">🌍 Countries</button>
+      <button onclick="selectCategory('colors')">🎨 Colors</button>
+      <button onclick="selectCategory('sports')">🏅 Sports</button>
+    </div>
+
+    <div class="level-btns" id="levelButtons">
+      <p><strong>Select Level:</strong></p>
+      <button onclick="selectLevel('easy')">🟢 Easy</button>
+      <button onclick="selectLevel('medium')">🟡 Medium</button>
+      <button onclick="selectLevel('hard')">🔴 Hard</button>
+    </div>
+
+    <div class="game-interface" id="gameArea">
+      <p id="categoryTitle"></p>
+      <p>Word: <span id="wordDisplay"></span></p>
+
+      <input type="text" id="letterInput" maxlength="1" />
+      <button class="guess-btn" onclick="guessLetter()">Guess</button>
+      <button id="hintBtn" onclick="useHint()">💡 Hint</button>
+
+      <p id="hangmanMsg" class="output"></p>
+      <p id="usedLetters" class="output"></p>
+    </div>
+
+    <div id="finalMessage"></div>
+    <button id="restartBtn" onclick="restartGame()">🔄 Restart Game</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
